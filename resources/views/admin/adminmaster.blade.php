@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <title>Home page</title>
+  <title>Home page with dashboard</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <link href="{{ asset('css/app.css') }}" rel="stylesheet">
