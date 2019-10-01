@@ -23,9 +23,9 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <td>01</td>
-                  <td>
+                <tr v-for="(category,index) in getallCategory" :key="category.id">
+                  <td>{{index+1}}</td>
+                  <td>{{category.title}}
                   </td>
                   <td>
                   	<a href="">Edit</a>
@@ -33,16 +33,7 @@
                   </td>
                   
                 </tr>
-                <tr>
-                  <td>02</td>
-                  <td>Category Two
-                  </td>
-                  <td>
-                  	<a href="">Edit</a>
-                  	<a href="">Delete</a>
-                  </td>
-                  
-                </tr>
+                
             
                 </tbody>
                
@@ -65,14 +56,14 @@
     export default {
       name:"CategoryList",
         mounted() {
-            
+           return this.$store.dispatch('allcategory') 
         },
         computed:{
-          getallCategpry(){
-            return this.$store.dispatch('allcategory')
+          getallCategory(){
+           return this.$store.getters.getCategory 
           }
         },
-        method:{
+        methods:{
 
         }
     }

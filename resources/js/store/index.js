@@ -1,21 +1,23 @@
 export default {
 	state:{
-		category:"get category"
+		category:[],
 	},
 	getters:{
 		getCategory(state){
 			return state.category
-		}
+		},
 	},
 	actions:{
-		allcategory(state,payload){
+		allcategory(context){
 			axios.get('/category')
 			.then((response)=>{
-				console.log(response.data)
+				context.commit('categories',response.data.categories)
 			})
 		}
 	},
 	mutations:{
-
+		categories(state,data){
+			return state.category=data
+		}
 	}
 }

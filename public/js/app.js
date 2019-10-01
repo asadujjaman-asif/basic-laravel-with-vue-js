@@ -1837,24 +1837,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "CategoryList",
-  mounted: function mounted() {},
+  mounted: function mounted() {
+    return this.$store.dispatch('allcategory');
+  },
   computed: {
-    getallCategpry: function getallCategpry() {
-      return this.$store.dispatch('allcategory');
+    getallCategory: function getallCategory() {
+      return this.$store.getters.getCategory;
     }
   },
-  method: {}
+  methods: {}
 });
 
 /***/ }),
@@ -41298,7 +41291,36 @@ var render = function() {
               )
             ]),
             _vm._v(" "),
-            _vm._m(0)
+            _c("div", { staticClass: "card-body" }, [
+              _c(
+                "table",
+                {
+                  staticClass: "table table-bordered table-hover",
+                  attrs: { id: "example2" }
+                },
+                [
+                  _vm._m(0),
+                  _vm._v(" "),
+                  _c(
+                    "tbody",
+                    _vm._l(_vm.getallCategory, function(category, index) {
+                      return _c("tr", { key: category.id }, [
+                        _c("td", [_vm._v(_vm._s(index + 1))]),
+                        _vm._v(" "),
+                        _c("td", [
+                          _vm._v(
+                            _vm._s(category.title) + "\n                  "
+                          )
+                        ]),
+                        _vm._v(" "),
+                        _vm._m(1, true)
+                      ])
+                    }),
+                    0
+                  )
+                ]
+              )
+            ])
           ])
         ])
       ])
@@ -41310,51 +41332,24 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "card-body" }, [
-      _c(
-        "table",
-        {
-          staticClass: "table table-bordered table-hover",
-          attrs: { id: "example2" }
-        },
-        [
-          _c("thead", [
-            _c("tr", [
-              _c("th", [_vm._v("SL")]),
-              _vm._v(" "),
-              _c("th", [_vm._v("Category Name")]),
-              _vm._v(" "),
-              _c("th", [_vm._v("Action")])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("tbody", [
-            _c("tr", [
-              _c("td", [_vm._v("01")]),
-              _vm._v(" "),
-              _c("td"),
-              _vm._v(" "),
-              _c("td", [
-                _c("a", { attrs: { href: "" } }, [_vm._v("Edit")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "" } }, [_vm._v("Delete")])
-              ])
-            ]),
-            _vm._v(" "),
-            _c("tr", [
-              _c("td", [_vm._v("02")]),
-              _vm._v(" "),
-              _c("td", [_vm._v("Category Two\n                  ")]),
-              _vm._v(" "),
-              _c("td", [
-                _c("a", { attrs: { href: "" } }, [_vm._v("Edit")]),
-                _vm._v(" "),
-                _c("a", { attrs: { href: "" } }, [_vm._v("Delete")])
-              ])
-            ])
-          ])
-        ]
-      )
+    return _c("thead", [
+      _c("tr", [
+        _c("th", [_vm._v("SL")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Category Name")]),
+        _vm._v(" "),
+        _c("th", [_vm._v("Action")])
+      ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("td", [
+      _c("a", { attrs: { href: "" } }, [_vm._v("Edit")]),
+      _vm._v(" "),
+      _c("a", { attrs: { href: "" } }, [_vm._v("Delete")])
     ])
   }
 ]
@@ -57600,7 +57595,7 @@ var Toast = sweetalert2__WEBPACK_IMPORTED_MODULE_5___default.a.mixin({
 window.Toast = Toast;
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_2__["default"]({
   routes: _routes__WEBPACK_IMPORTED_MODULE_3__["routes"],
-  mode: "history"
+  mode: "hash"
 });
 var app = new Vue({
   el: '#app',
@@ -57986,7 +57981,7 @@ var routes = [{
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ({
   state: {
-    category: "get category"
+    category: []
   },
   getters: {
     getCategory: function getCategory(state) {
@@ -57994,13 +57989,17 @@ __webpack_require__.r(__webpack_exports__);
     }
   },
   actions: {
-    allcategory: function allcategory(state, payload) {
+    allcategory: function allcategory(context) {
       axios.get('/category').then(function (response) {
-        console.log(response.data);
+        context.commit('categories', response.data.categories);
       });
     }
   },
-  mutations: {}
+  mutations: {
+    categories: function categories(state, data) {
+      return state.category = data;
+    }
+  }
 });
 
 /***/ }),

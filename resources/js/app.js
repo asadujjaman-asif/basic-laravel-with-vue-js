@@ -39,7 +39,7 @@ window.Toast=Toast
 
 const router = new VueRouter({
    routes: routes,
-  mode:"history"
+  mode:"hash"
 })
 
 

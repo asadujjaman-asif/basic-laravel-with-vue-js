@@ -20,7 +20,7 @@ class CategoryController extends Controller
     }
     public function get_category_list()
     {
-    	$category=Category::all();
-    	return response()->json(['categories'=>$category],200);
+    	$categories=Category::all();
+    	return response()->json(['categories'=>$categories],200);
     }
 }
