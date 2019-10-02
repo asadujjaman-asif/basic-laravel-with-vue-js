@@ -31,7 +31,7 @@
                   </td>
                   <td>
                   	<a href="">Edit</a>
-                  	<a href="">Delete</a>
+                  	<a href="" @click.prevent="deletecategory(category.id)">Delete</a>
                   </td>
                   
                 </tr>
@@ -66,7 +66,19 @@
           }
         },
         methods:{
+          deletecategory(id){
+            axios.get('/category/'+id)
+            .then(()=>{
+                this.$store.dispatch('allcategory') 
+                Toast.fire({
+                type: 'success',
+                title: 'Category deleted successfully'
+              })
+            })
+            .catch(()=>{
 
+                   })
+          }
         }
     }
 </script>
