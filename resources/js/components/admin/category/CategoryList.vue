@@ -8,7 +8,7 @@
               <h3 class="card-title">Category List</h3>
               <div class="card-tools btn btn-primary">
 
-              <router-link to="/add-category" style="color:#fff"> Add Category </router-link>
+                    <router-link to="/add-category" style="color:#fff"> Add Category </router-link>
               </div>
             </div>
             <!-- /.card-header -->

@@ -83,7 +83,7 @@ a679abc7d6fb3f9fb042d0046a6b8790
             </router-link>
           </li>
           <li class="nav-item">
-            <router-link to="/post" class="nav-link">
+            <router-link to="/post-list" class="nav-link">
               <i class="nav-icon fa fa-th"></i>
               <p>
                 Posts
@@ -248,5 +248,6 @@ a679abc7d6fb3f9fb042d0046a6b8790
 </div>
 
  <script src="{{ asset('js/app.js') }}" defer></script>
+
 </body>
 </html>
