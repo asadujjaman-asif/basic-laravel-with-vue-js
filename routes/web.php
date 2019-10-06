@@ -29,3 +29,5 @@ Route::get('/category','CategoryController@get_category_list');
 Route::get('/category/{id}','CategoryController@delete_category');
 Route::get('/edit-category/{id}','CategoryController@edit_category');
 Route::post('/update-category/{id}','CategoryController@update_category');
+//get post data
+Route::get('/post','PostController@allpost');

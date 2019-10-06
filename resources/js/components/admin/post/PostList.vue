@@ -30,15 +30,15 @@
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                  <td>Trident</td>
-                  <td>Internet
-                    Explorer 4.0
+                <tr v-for="(post,index) in allpost">
+                  <td>{{index+1}}</td>
+                  <td v-if="post.user">{{post.user.name}}
                   </td>
-                  <td>Win 95+</td>
-                  <td> 4</td>
-                  <td>X</td>
-                  <td>X</td>
+                  <td>Category name</td>
+                  <!--<td v-if="post.category">{{post.category.title}}</td>-->
+                  <td >{{post.title}}</td>
+                  <td>{{post.long_description | sortlenght(50,'...')}}</td>
+                  <td><img :src="post.photo" width="80" height="60"></td>
                   <td>X</td>
                 </tr>
                 
@@ -57,3 +57,20 @@
 
 	</div>
 </template>
+
+<script>
+    export default {
+      name:"PostList",
+        mounted() {
+           return this.$store.dispatch('getallpost')
+        },
+        computed:{
+          allpost(){
+           return this.$store.getters.getAllpost 
+          }
+        },
+        methods:{
+          
+        }
+    }
+</script>

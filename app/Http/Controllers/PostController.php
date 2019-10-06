@@ -8,6 +8,8 @@ class PostController extends Controller
 {
     public function allpost()
     {
-    	return $post = Post::with('user','category')->get();
+    	$posts = Post::with('user','category')->get();
+    	//$posts = Post::all();
+    	return response()->json(['posts'=>$posts],200);
     }
 }
