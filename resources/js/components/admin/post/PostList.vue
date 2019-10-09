@@ -35,7 +35,7 @@
                   <td v-if="post.user">{{post.user.name}}
                   </td>
                   <td>Category name</td>
-                  <!--<td v-if="post.category">{{post.category.title}}</td>-->
+                  
                   <td >{{post.title}}</td>
                   <td>{{post.long_description | sortlenght(50,'...')}}</td>
                   <td><img :src="post.photo" width="80" height="60"></td>
@@ -54,10 +54,8 @@
       </div>
       <!-- /.row -->
     </section>
-
 	</div>
 </template>
-
 <script>
     export default {
       name:"PostList",
