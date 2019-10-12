@@ -12,7 +12,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" @click.prevent="addNewPost()">
+              <form role="form" >
                 <div class="card-body">
                   <div class="form-group">
                     <label for="posttitle">Add new post</label>
@@ -38,7 +38,8 @@
                     <has-error :form="form" field="category_id"></has-error>
                   </div>
                   <div class="form-group">
-                    <input type="file"  name="photo" :class="{ 'is-invalid': form.errors.has('photo') }">
+                    <input @change = "changePhoto($event)" type="file"  name="photo" :class="{ 'is-invalid': form.errors.has('photo') }">
+                    <img :src="form.photo" alt="photo" width="100" height="80">
                     <has-error :form="form" field="photo"></has-error>
                   </div>
        
@@ -86,21 +87,18 @@
 	           return this.$store.getters.getCategory 
 	          }
 	        },
-            methods:{
-            	addNewPost(){
-            		this.form.post('add-category')
-            			.then((response)=>{
-            				this.$router.push('/category-list')
-							Toast.fire({
-							  type: 'success',
-							  title: 'Category added successfully'
-							})
-            			})
-            			.catch(()=>{
+          methods:{
+            changePhoto(event){
+              let file = event.target.files[0];
+              let reader = new FileReader();
+              reader.onload = event => {
+                this.form.photo = event.target.result
+                console.log(event.target.result)
+              };
 
-            			})
-            	}
-            }
+              reader.readAsDataURL(file);
+            }	
+          }
     }
 </script>
 <style scoped>
