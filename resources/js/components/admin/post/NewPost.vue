@@ -26,7 +26,8 @@
                   </div>
                   <div class="form-group">
                     <label for="longdesc">Post long description</label>
-                    <textarea rows="7" class="form-control" id="longdesc" placeholder="long description" v-model="form.long_description" name="long_description" :class="{ 'is-invalid': form.errors.has('long_description') }"></textarea>
+                    <!--<textarea rows="7" class="form-control" id="longdesc" placeholder="long description" v-model="form.long_description" name="long_description" :class="{ 'is-invalid': form.errors.has('long_description') }"></textarea>-->
+                    <markdown-editor v-model="form.long_description"></markdown-editor>
                     <has-error :form="form" field="long_description"></has-error>
                   </div>
                   <div class="form-group">
