@@ -4582,6 +4582,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "NewPost",
   data: function data() {
@@ -4616,6 +4617,18 @@ __webpack_require__.r(__webpack_exports__);
       };
 
       reader.readAsDataURL(file);
+    },
+    addnewpost: function addnewpost() {
+      var _this2 = this;
+
+      this.form.post("/save-new-post").then(function () {
+        _this2.$router.push('post-list');
+
+        Toast.fire({
+          type: 'success',
+          title: 'Post added successfully....'
+        });
+      })["catch"](function () {});
     }
   }
 });
@@ -83537,225 +83550,215 @@ var render = function() {
             _c("div", { staticClass: "card card-primary" }, [
               _vm._m(0),
               _vm._v(" "),
-              _c("form", { attrs: { role: "form" } }, [
-                _c("div", { staticClass: "card-body" }, [
-                  _c(
-                    "div",
-                    { staticClass: "form-group" },
-                    [
-                      _c("label", { attrs: { for: "posttitle" } }, [
-                        _vm._v("Add new post")
-                      ]),
-                      _vm._v(" "),
-                      _c("input", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.form.title,
-                            expression: "form.title"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        class: { "is-invalid": _vm.form.errors.has("title") },
-                        attrs: {
-                          type: "text",
-                          id: "posttitle",
-                          placeholder: "add new post",
-                          name: "title"
-                        },
-                        domProps: { value: _vm.form.title },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(_vm.form, "title", $event.target.value)
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("has-error", {
-                        attrs: { form: _vm.form, field: "title" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "form-group" },
-                    [
-                      _c("label", { attrs: { for: "shortdesc" } }, [
-                        _vm._v("Post short description")
-                      ]),
-                      _vm._v(" "),
-                      _c("textarea", {
-                        directives: [
-                          {
-                            name: "model",
-                            rawName: "v-model",
-                            value: _vm.form.short_description,
-                            expression: "form.short_description"
-                          }
-                        ],
-                        staticClass: "form-control",
-                        class: {
-                          "is-invalid": _vm.form.errors.has("short_description")
-                        },
-                        attrs: {
-                          rows: "5",
-                          id: "shortdesc",
-                          placeholder: "short description",
-                          name: "short_description"
-                        },
-                        domProps: { value: _vm.form.short_description },
-                        on: {
-                          input: function($event) {
-                            if ($event.target.composing) {
-                              return
-                            }
-                            _vm.$set(
-                              _vm.form,
-                              "short_description",
-                              $event.target.value
-                            )
-                          }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("has-error", {
-                        attrs: { form: _vm.form, field: "short_description" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "form-group" },
-                    [
-                      _c("label", { attrs: { for: "longdesc" } }, [
-                        _vm._v("Post long description")
-                      ]),
-                      _vm._v(" "),
-                      _c("markdown-editor", {
-                        model: {
-                          value: _vm.form.long_description,
-                          callback: function($$v) {
-                            _vm.$set(_vm.form, "long_description", $$v)
-                          },
-                          expression: "form.long_description"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("has-error", {
-                        attrs: { form: _vm.form, field: "long_description" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "form-group" },
-                    [
-                      _c("label", { attrs: { for: "longdesc" } }, [
-                        _vm._v("Select category")
-                      ]),
-                      _vm._v(" "),
-                      _c(
-                        "select",
-                        {
+              _c(
+                "form",
+                {
+                  attrs: { role: "form" },
+                  on: {
+                    submit: function($event) {
+                      $event.preventDefault()
+                      return _vm.addnewpost()
+                    }
+                  }
+                },
+                [
+                  _c("div", { staticClass: "card-body" }, [
+                    _c(
+                      "div",
+                      { staticClass: "form-group" },
+                      [
+                        _c("label", { attrs: { for: "posttitle" } }, [
+                          _vm._v("Add new post")
+                        ]),
+                        _vm._v(" "),
+                        _c("input", {
                           directives: [
                             {
                               name: "model",
                               rawName: "v-model",
-                              value: _vm.form.category_id,
-                              expression: "form.category_id"
+                              value: _vm.form.title,
+                              expression: "form.title"
                             }
                           ],
                           staticClass: "form-control",
-                          class: {
-                            "is-invalid": _vm.form.errors.has("category_id")
+                          class: { "is-invalid": _vm.form.errors.has("title") },
+                          attrs: {
+                            type: "text",
+                            id: "posttitle",
+                            placeholder: "add new post",
+                            name: "title"
                           },
-                          attrs: { name: "category_id" },
+                          domProps: { value: _vm.form.title },
                           on: {
-                            change: function($event) {
-                              var $$selectedVal = Array.prototype.filter
-                                .call($event.target.options, function(o) {
-                                  return o.selected
-                                })
-                                .map(function(o) {
-                                  var val = "_value" in o ? o._value : o.value
-                                  return val
-                                })
-                              _vm.$set(
-                                _vm.form,
-                                "category_id",
-                                $event.target.multiple
-                                  ? $$selectedVal
-                                  : $$selectedVal[0]
-                              )
+                            input: function($event) {
+                              if ($event.target.composing) {
+                                return
+                              }
+                              _vm.$set(_vm.form, "title", $event.target.value)
                             }
                           }
-                        },
-                        [
-                          _c("option", { attrs: { disabled: "", value: "" } }, [
-                            _vm._v(" Select one ")
-                          ]),
-                          _vm._v(" "),
-                          _vm._l(_vm.getallCategory, function(category) {
-                            return _c(
-                              "option",
-                              { domProps: { value: category.id } },
-                              [_vm._v(_vm._s(category.title))]
-                            )
-                          })
-                        ],
-                        2
-                      ),
-                      _vm._v(" "),
-                      _c("has-error", {
-                        attrs: { form: _vm.form, field: "category_id" }
-                      })
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "div",
-                    { staticClass: "form-group" },
-                    [
-                      _c("input", {
-                        class: { "is-invalid": _vm.form.errors.has("photo") },
-                        attrs: { type: "file", name: "photo" },
-                        on: {
-                          change: function($event) {
-                            return _vm.changePhoto($event)
+                        }),
+                        _vm._v(" "),
+                        _c("has-error", {
+                          attrs: { form: _vm.form, field: "title" }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "form-group" },
+                      [
+                        _c("label", { attrs: { for: "shortdesc" } }, [
+                          _vm._v("Post short description")
+                        ]),
+                        _vm._v(" "),
+                        _c("markdown-editor", {
+                          model: {
+                            value: _vm.form.short_description,
+                            callback: function($$v) {
+                              _vm.$set(_vm.form, "short_description", $$v)
+                            },
+                            expression: "form.short_description"
                           }
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("img", {
-                        attrs: {
-                          src: _vm.form.photo,
-                          alt: "photo",
-                          width: "100",
-                          height: "80"
-                        }
-                      }),
-                      _vm._v(" "),
-                      _c("has-error", {
-                        attrs: { form: _vm.form, field: "photo" }
-                      })
-                    ],
-                    1
-                  )
-                ]),
-                _vm._v(" "),
-                _vm._m(1)
-              ])
+                        }),
+                        _vm._v(" "),
+                        _c("has-error", {
+                          attrs: { form: _vm.form, field: "short_description" }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "form-group" },
+                      [
+                        _c("label", { attrs: { for: "longdesc" } }, [
+                          _vm._v("Post long description")
+                        ]),
+                        _vm._v(" "),
+                        _c("markdown-editor", {
+                          model: {
+                            value: _vm.form.long_description,
+                            callback: function($$v) {
+                              _vm.$set(_vm.form, "long_description", $$v)
+                            },
+                            expression: "form.long_description"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("has-error", {
+                          attrs: { form: _vm.form, field: "long_description" }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "form-group" },
+                      [
+                        _c("label", { attrs: { for: "longdesc" } }, [
+                          _vm._v("Select category")
+                        ]),
+                        _vm._v(" "),
+                        _c(
+                          "select",
+                          {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.form.category_id,
+                                expression: "form.category_id"
+                              }
+                            ],
+                            staticClass: "form-control",
+                            class: {
+                              "is-invalid": _vm.form.errors.has("category_id")
+                            },
+                            attrs: { name: "category_id" },
+                            on: {
+                              change: function($event) {
+                                var $$selectedVal = Array.prototype.filter
+                                  .call($event.target.options, function(o) {
+                                    return o.selected
+                                  })
+                                  .map(function(o) {
+                                    var val = "_value" in o ? o._value : o.value
+                                    return val
+                                  })
+                                _vm.$set(
+                                  _vm.form,
+                                  "category_id",
+                                  $event.target.multiple
+                                    ? $$selectedVal
+                                    : $$selectedVal[0]
+                                )
+                              }
+                            }
+                          },
+                          [
+                            _c(
+                              "option",
+                              { attrs: { disabled: "", value: "" } },
+                              [_vm._v(" Select one ")]
+                            ),
+                            _vm._v(" "),
+                            _vm._l(_vm.getallCategory, function(category) {
+                              return _c(
+                                "option",
+                                { domProps: { value: category.id } },
+                                [_vm._v(_vm._s(category.title))]
+                              )
+                            })
+                          ],
+                          2
+                        ),
+                        _vm._v(" "),
+                        _c("has-error", {
+                          attrs: { form: _vm.form, field: "category_id" }
+                        })
+                      ],
+                      1
+                    ),
+                    _vm._v(" "),
+                    _c(
+                      "div",
+                      { staticClass: "form-group" },
+                      [
+                        _c("input", {
+                          class: { "is-invalid": _vm.form.errors.has("photo") },
+                          attrs: { type: "file", name: "photo" },
+                          on: {
+                            change: function($event) {
+                              return _vm.changePhoto($event)
+                            }
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("img", {
+                          attrs: {
+                            src: _vm.form.photo,
+                            alt: "photo",
+                            width: "100",
+                            height: "80"
+                          }
+                        }),
+                        _vm._v(" "),
+                        _c("has-error", {
+                          attrs: { form: _vm.form, field: "photo" }
+                        })
+                      ],
+                      1
+                    )
+                  ]),
+                  _vm._v(" "),
+                  _vm._m(1)
+                ]
+              )
             ])
           ])
         ])

@@ -12,7 +12,7 @@
               </div>
               <!-- /.card-header -->
               <!-- form start -->
-              <form role="form" >
+              <form role="form" @submit.prevent="addnewpost()">
                 <div class="card-body">
                   <div class="form-group">
                     <label for="posttitle">Add new post</label>
@@ -21,7 +21,8 @@
                   </div>
                   <div class="form-group">
                     <label for="shortdesc">Post short description</label>
-                    <textarea rows="5" class="form-control" id="shortdesc" placeholder="short description" v-model="form.short_description" name="short_description" :class="{ 'is-invalid': form.errors.has('short_description') }"></textarea>
+                    <!--<textarea rows="5" class="form-control" id="shortdesc" placeholder="short description" v-model="form.short_description" name="short_description" :class="{ 'is-invalid': form.errors.has('short_description') }"></textarea>-->
+                    <markdown-editor v-model="form.short_description"></markdown-editor>
                     <has-error :form="form" field="short_description"></has-error>
                   </div>
                   <div class="form-group">
@@ -98,6 +99,19 @@
               };
 
               reader.readAsDataURL(file);
+            },
+            addnewpost(){
+              this.form.post("/save-new-post")
+              .then(()=>{
+                this.$router.push('post-list')
+                Toast.fire({
+                type: 'success',
+                title: 'Post added successfully....'
+                })
+              })
+              .catch(()=>{
+
+              })
             }	
           }
     }

@@ -31,3 +31,4 @@ Route::get('/edit-category/{id}','CategoryController@edit_category');
 Route::post('/update-category/{id}','CategoryController@update_category');
 //get post data
 Route::get('/post','PostController@allpost');
+Route::post('/save-new-post','PostController@saveNewPost');
