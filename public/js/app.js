@@ -4609,14 +4609,23 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       var file = event.target.files[0];
-      var reader = new FileReader();
 
-      reader.onload = function (event) {
-        _this.form.photo = event.target.result;
-        console.log(event.target.result);
-      };
+      if (file.size > 10487560) {
+        Swal.fire({
+          type: 'error',
+          title: 'Oops...',
+          text: 'Image size lowest then 3 mb'
+        });
+      } else {
+        var reader = new FileReader();
 
-      reader.readAsDataURL(file);
+        reader.onload = function (event) {
+          _this.form.photo = event.target.result;
+          console.log(event.target.result);
+        };
+
+        reader.readAsDataURL(file);
+      }
     },
     addnewpost: function addnewpost() {
       var _this2 = this;

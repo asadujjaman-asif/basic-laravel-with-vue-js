@@ -92,13 +92,21 @@
           methods:{
             changePhoto(event){
               let file = event.target.files[0];
-              let reader = new FileReader();
+              if(file.size>10487560){
+                Swal.fire({
+                  type: 'error',
+                  title: 'Oops...',
+                  text: 'Image size lowest then 3 mb',
+                })
+              }else{
+                let reader = new FileReader();
               reader.onload = event => {
                 this.form.photo = event.target.result
                 console.log(event.target.result)
               };
 
               reader.readAsDataURL(file);
+              }
             },
             addnewpost(){
               this.form.post("/save-new-post")
