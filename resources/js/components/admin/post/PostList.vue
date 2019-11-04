@@ -38,8 +38,11 @@
                   
                   <td >{{post.title}}</td>
                   <td>{{post.long_description | sortlenght(50,'...')}}</td>
-                  <td><img :src="post.photo" width="80" height="60"></td>
-                  <td>X</td>
+                  <td><img :src="postImages(post.photo)" width="80" height="60"></td>
+                  <td>
+                    <a href="">Edit</a>
+                    <a href="" @click.prevent="deletePost(post.id)">Delete</a>
+                  </td>
                 </tr>
                 
                 </tbody>
@@ -68,7 +71,23 @@
           }
         },
         methods:{
+          postImages(img){
+              return "/assets/postiamges/"+img;
+          },
+          deletePost(id){
+          axios.get("/delete-post/"+id)
           
+          .then(()=>{
+            this.$store.dispatch('getallpost')
+                Toast.fire({
+                type: 'success',
+                title: 'Post deleted successfully....'
+                })
+          })
+          .catch(()=>{
+
+          })
         }
+      }
     }
 </script>

@@ -4711,6 +4711,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "PostList",
   mounted: function mounted() {
@@ -4721,7 +4724,23 @@ __webpack_require__.r(__webpack_exports__);
       return this.$store.getters.getAllpost;
     }
   },
-  methods: {}
+  methods: {
+    postImages: function postImages(img) {
+      return "/assets/postiamges/" + img;
+    },
+    deletePost: function deletePost(id) {
+      var _this = this;
+
+      axios.get("/delete-post/" + id).then(function () {
+        _this.$store.dispatch('getallpost');
+
+        Toast.fire({
+          type: 'success',
+          title: 'Post deleted successfully....'
+        });
+      })["catch"](function () {});
+    }
+  }
 });
 
 /***/ }),
@@ -83886,14 +83905,30 @@ var render = function() {
                         _c("td", [
                           _c("img", {
                             attrs: {
-                              src: post.photo,
+                              src: _vm.postImages(post.photo),
                               width: "80",
                               height: "60"
                             }
                           })
                         ]),
                         _vm._v(" "),
-                        _c("td", [_vm._v("X")])
+                        _c("td", [
+                          _c("a", { attrs: { href: "" } }, [_vm._v("Edit")]),
+                          _vm._v(" "),
+                          _c(
+                            "a",
+                            {
+                              attrs: { href: "" },
+                              on: {
+                                click: function($event) {
+                                  $event.preventDefault()
+                                  return _vm.deletePost(post.id)
+                                }
+                              }
+                            },
+                            [_vm._v("Delete")]
+                          )
+                        ])
                       ])
                     }),
                     0

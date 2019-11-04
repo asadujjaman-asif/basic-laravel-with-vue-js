@@ -37,4 +37,14 @@ class PostController extends Controller
     	$post->save();
     	return ["message"=>"Ok"];
     }
+    public function postdelete($id)
+    {
+        $post = Post::find($id);
+        $images_path = public_path()."/assets/postiamges/";
+        $images = $images_path.$post->photo;
+        if(file_exists($images)){
+            @unlink($images);
+        }
+        $post->delete();
+    }
 }
