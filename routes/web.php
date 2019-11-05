@@ -32,4 +32,5 @@ Route::post('/update-category/{id}','CategoryController@update_category');
 //get post data
 Route::get('/post','PostController@allpost');
 Route::post('/save-new-post','PostController@saveNewPost');
+Route::get('/get-post-by-id/{id}','PostController@editPost');
 Route::get('/delete-post/{id}','PostController@postdelete');

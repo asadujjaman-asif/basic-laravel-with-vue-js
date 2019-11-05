@@ -40,7 +40,7 @@
                   <td>{{post.long_description | sortlenght(50,'...')}}</td>
                   <td><img :src="postImages(post.photo)" width="80" height="60"></td>
                   <td>
-                    <a href="">Edit</a>
+                    <router-link :to="`edit-post/${post.id}`">Edit</router-link>
                     <a href="" @click.prevent="deletePost(post.id)">Delete</a>
                   </td>
                 </tr>
