@@ -4580,9 +4580,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "Edit",
   data: function data() {
@@ -4637,8 +4634,8 @@ __webpack_require__.r(__webpack_exports__);
     updatePost: function updatePost() {
       var _this3 = this;
 
-      this.form.post("/save-new-post").then(function () {
-        _this3.$router.push('post-list');
+      this.form.post("/update-post/".concat(this.$route.params.postid)).then(function () {
+        _this3.$router.push('/post-list');
 
         Toast.fire({
           type: 'success',

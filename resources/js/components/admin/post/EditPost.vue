@@ -56,9 +56,6 @@
             <!-- /.card -->
 
             <!-- /.card -->
-
-            
-
           </div>
         </div>
         <!-- /.row -->
@@ -115,12 +112,12 @@
               }
             },
             updatePost(){
-              this.form.post("/save-new-post")
+              this.form.post(`/update-post/${this.$route.params.postid}`)
               .then(()=>{
-                this.$router.push('post-list')
+                this.$router.push('/post-list')
                 Toast.fire({
-                type: 'success',
-                title: 'Post updated successfully....'
+                  type: 'success',
+                  title: 'Post updated successfully....'
                 })
               })
               .catch(()=>{
