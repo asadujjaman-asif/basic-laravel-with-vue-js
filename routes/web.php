@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('public.home');
 });
 
 Auth::routes();
@@ -24,6 +24,7 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 /*Route::get('/{anypath}', 'HomeController@index')->where('path','.*');*/
 //Category
+
 Route::group(['middleware'=>['auth']], function(){
 	Route::post('/add-category','CategoryController@add_category');
 	Route::get('/category','CategoryController@get_category_list');

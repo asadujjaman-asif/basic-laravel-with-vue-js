@@ -8,6 +8,8 @@ use Auth;
 use Image;
 class PostController extends Controller
 {
+    
+    /*mir mamun: 1b7ce6c29e33b818c2e1c82983ff5281*/
     public function allpost()
     {
     	$posts = Post::with('user','category')->get();
