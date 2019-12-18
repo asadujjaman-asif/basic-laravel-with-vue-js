@@ -3,9 +3,9 @@
 		<section id="featured">
       <div id="nivo-slider">
         <div class="nivo-slider">
-          <!--<img src="{{asset('assets/frontend/img/')}}/slides/nivo/bg-1.jpg" alt="" title="#caption-1" />
-          <img src="{{asset('assets/frontend/img/')}}/slides/nivo/bg-2.jpg" alt="" title="#caption-2" />
-          <img src="{{asset('assets/frontend/img/')}}/slides/nivo/bg-3.jpg" alt="" title="#caption-3" />-->
+          <img :src="`assets/frontend/img/slides/nivo/bg-1.jpg`" alt="" title="#caption-1" />
+          <img :src="`assets/frontend/img/slides/nivo/bg-2.jpg`" alt="" title="#caption-2" />
+         <img  :src="`assets/frontend/img/slides/nivo/bg-3.jpg`" alt="" title="#caption-3" />
         </div>
         <div class="container">
           <div class="row">
@@ -140,65 +140,65 @@
             <h4 class="heading">Some of recent <strong>works</strong></h4>
             <div class="row">
               <section id="projects">
-                <!--<ul id="thumbs" class="portfolio">
+                <ul id="thumbs" class="portfolio">
                   <li class="item-thumbs span3 design" data-id="id-0" data-type="web">
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The City" href="{{asset('assets/frontend/img/')}}/works/full/image-01-full.jpg">
+                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The City" >
 						<span class="overlay-img"></span>
 						<span class="overlay-img-thumb font-icon-plus"></span>
 						</a>
               
-                    <img src="{{asset('assets/frontend/img/')}}/works/thumbs/image-01.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis."> 
+                    <img :src="`assets/frontend/img/works/thumbs/image-01.jpg`" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis."> 
                   </li>
                   <li class="item-thumbs span3 design" data-id="id-1" data-type="icon">
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Office" href="{{asset('assets/frontend/img/')}}/works/full/image-02-full.jpg">
+                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Office" >
 						<span class="overlay-img"></span>
 						<span class="overlay-img-thumb font-icon-plus"></span>
 						</a>
-                    <img src="{{asset('assets/frontend/img/')}}/works/thumbs/image-02.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                    <img :src="`assets/frontend/img/works/thumbs/image-02.jpg`" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
                   </li>
                   <li class="item-thumbs span3 photography" data-id="id-2" data-type="illustrator">
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="{{asset('assets/frontend/img/')}}/works/full/image-03-full.jpg">
+                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" >
 						<span class="overlay-img"></span>
 						<span class="overlay-img-thumb font-icon-plus"></span>
 						</a>
-                    <img src="{{asset('assets/frontend/img/')}}/works/thumbs/image-03.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                    <img :src="`assets/frontend/img/works/thumbs/image-03.jpg`" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
                   </li>
                   <li class="item-thumbs span3 photography" data-id="id-2" data-type="illustrator">
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="{{asset('assets/frontend/img/')}}/works/full/image-04-full.jpg">
+                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" >
 						<span class="overlay-img"></span>
 						<span class="overlay-img-thumb font-icon-plus"></span>
 						</a>
-                    <img src="{{asset('assets/frontend/img/')}}/works/thumbs/image-04.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                    <img :src="`assets/frontend/img/works/thumbs/image-04.jpg`" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
                   </li>
                   <li class="item-thumbs span3 photography" data-id="id-4" data-type="web">
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Sea" href="{{asset('assets/frontend/img/')}}/works/full/image-05-full.jpg">
+                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Sea" >
 						<span class="overlay-img"></span>
 						<span class="overlay-img-thumb font-icon-plus"></span>
 						</a>
-                    <img src="{{asset('assets/frontend/img/')}}/works/thumbs/image-05.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                    <img :src="`assets/frontend/img/works/thumbs/image-05.jpg`" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
                   </li>
                   <li class="item-thumbs span3 photography" data-id="id-5" data-type="icon">
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Clouds" href="{{asset('assets/frontend/img/')}}/works/full/image-06-full.jpg">
+                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="Clouds" >
 						<span class="overlay-img"></span>
 						<span class="overlay-img-thumb font-icon-plus"></span>
 						</a>
-                    <img src="{{asset('assets/frontend/img/')}}/works/thumbs/image-06.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                    <img :src="`assets/frontend/img/works/thumbs/image-06.jpg`" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
                   </li>
                   <li class="item-thumbs span3 photography" data-id="id-2" data-type="illustrator">
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" href="{{asset('assets/frontend/img/')}}/works/full/image-07-full.jpg">
+                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Mountains" >
 						<span class="overlay-img"></span>
 						<span class="overlay-img-thumb font-icon-plus"></span>
 						</a>
-                    <img src="{{asset('assets/frontend/img/')}}/works/thumbs/image-07.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                    <img :src="`assets/frontend/img/works/thumbs/image-07.jpg`" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
                   </li>
                   <li class="item-thumbs span3 design" data-id="id-0" data-type="web">
-                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Dark" href="{{asset('assets/frontend/img/')}}/works/full/image-08-full.jpg">
+                    <a class="hover-wrap fancybox" data-fancybox-group="gallery" title="The Dark" >
 						<span class="overlay-img"></span>
 						<span class="overlay-img-thumb font-icon-plus"></span>
 						</a>
-                    <img src="{{asset('assets/frontend/img/')}}/works/thumbs/image-08.jpg" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
+                    <img :src="`assets/frontend/img/works/thumbs/image-08.jpg`" alt="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus quis elementum odio. Curabitur pellentesque, dolor vel pharetra mollis.">
                   </li>
-                </ul>-->
+                </ul>
               </section>
             </div>
           </div>
@@ -215,68 +215,68 @@
         <div class="row">
           <div class="span12">
             <h4>Very satisfied <strong>clients</strong></h4>
-            <!--<ul id="mycarousel" class="jcarousel-skin-tango recent-jcarousel clients">
+            <ul id="mycarousel" class="jcarousel-skin-tango recent-jcarousel clients">
               <li>
                 <a href="#">
-					<img src="{{asset('assets/frontend/img/')}}/dummies/clients/client1.png" class="client-logo" alt="" />
+					<img :src="`assets/frontend/img/dummies/clients/client1.png`" class="client-logo" alt="" />
 					</a>
               </li>
               <li>
                 <a href="#">
-					<img src="{{asset('assets/frontend/img/')}}/dummies/clients/client2.png" class="client-logo" alt="" />
+					<img :src="`assets/frontend/img/dummies/clients/client2.png`" class="client-logo" alt="" />
 					</a>
               </li>
               <li>
                 <a href="#">
-					<img src="{{asset('assets/frontend/img/')}}/dummies/clients/client3.png" class="client-logo" alt="" />
+					<img :src="`assets/frontend/img/dummies/clients/client3.png`" class="client-logo" alt="" />
 					</a>
               </li>
               <li>
                 <a href="#">
-					<img src="{{asset('assets/frontend/img/')}}/dummies/clients/client4.png" class="client-logo" alt="" />
+					<img :src="`assets/frontend/img/dummies/clients/client4.png`" class="client-logo" alt="" />
 					</a>
               </li>
               <li>
                 <a href="#">
-					<img src="{{asset('assets/frontend/img/')}}/dummies/clients/client5.png" class="client-logo" alt="" />
+					<img :src="`assets/frontend/img/dummies/clients/client5.png`" class="client-logo" alt="" />
 					</a>
               </li>
               <li>
                 <a href="#">
-					<img src="{{asset('assets/frontend/img/')}}/dummies/clients/client6.png" class="client-logo" alt="" />
+					<img :src="`assets/frontend/img/dummies/clients/client6.png`" class="client-logo" alt="" />
 					</a>
               </li>
               <li>
                 <a href="#">
-					<img src="{{asset('assets/frontend/img/')}}/dummies/clients/client1.png" class="client-logo" alt="" />
+					<img :src="`assets/frontend/img/dummies/clients/client1.png`" class="client-logo" alt="" />
 					</a>
               </li>
               <li>
                 <a href="#">
-					<img src="{{asset('assets/frontend/img/')}}/dummies/clients/client2.png" class="client-logo" alt="" />
+					<img :src="`assets/frontend/img/dummies/clients/client2.png`" class="client-logo" alt="" />
 					</a>
               </li>
               <li>
                 <a href="#">
-					<img src="{{asset('assets/frontend/img/')}}/dummies/clients/client3.png" class="client-logo" alt="" />
+					<img :src="`assets/frontend/img/dummies/clients/client3.png`" class="client-logo" alt="" />
 					</a>
               </li>
               <li>
                 <a href="#">
-					<img src="{{asset('assets/frontend/img/')}}/dummies/clients/client4.png" class="client-logo" alt="" />
+					<img :src="`assets/frontend/img/dummies/clients/client4.png`" class="client-logo" alt="" />
 					</a>
               </li>
               <li>
                 <a href="#">
-					<img src="{{asset('assets/frontend/img/')}}/dummies/clients/client5.png" class="client-logo" alt="" />
+					<img :src="`assets/frontend/img/dummies/clients/client5.png`" class="client-logo" alt="" />
 					</a>
               </li>
               <li>
                 <a href="#">
-					<img src="{{asset('assets/frontend/img/')}}/dummies/clients/client6.png" class="client-logo" alt="" />
+					<img :src="`assets/frontend/img/dummies/clients/client6.png`" class="client-logo" alt="" />
 					</a>
               </li>
-            </ul>-->
+            </ul>
           </div>
         </div>
       </div>

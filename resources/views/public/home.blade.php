@@ -170,12 +170,8 @@
                 <div class="navigation">
                   <nav>
                     <ul class="nav topnav">
-                      <li class="dropdown active">
-                        <a href="index.html">Home <i class="icon-angle-down"></i></a>
-                        <ul class="dropdown-menu">
-                          <li><a href="index-alt2.html">Homepage 2</a></li>
-                          <li><a href="index-alt3.html">Homepage 3</a></li>
-                        </ul>
+                      <li>
+                        <router-link to="/">Home </router-link>
                       </li>
                       <li class="dropdown">
                         <a href="#">Features <i class="icon-angle-down"></i></a>

@@ -38,3 +38,5 @@ Route::group(['middleware'=>['auth']], function(){
 	Route::get('/delete-post/{id}','PostController@postdelete');
 	Route::post('/update-post/{id}','PostController@updatePost');
 });
+//Start here frontend route
+Route::get("/blogpost","BlogController@getAllBlogPost");
