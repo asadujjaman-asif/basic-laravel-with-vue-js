@@ -40,3 +40,4 @@ Route::group(['middleware'=>['auth']], function(){
 });
 //Start here frontend route
 Route::get("/blogpost","BlogController@getAllBlogPost");
+Route::get("/post-details/{id}","BlogController@singlePostById");

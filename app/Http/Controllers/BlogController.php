@@ -11,4 +11,9 @@ class BlogController extends Controller
     	$posts = Post::with('user','category')->orderBy("id","desc")->get();
     	return response()->json(['posts'=>$posts],200);
     }
+    public function singlePostById($id)
+    {
+    	$post= Post::with('user','category')->where("id",$id)->first();
+    	return response()->json(['post'=>$post],200);
+    }
 }

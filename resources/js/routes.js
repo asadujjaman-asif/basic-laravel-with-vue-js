@@ -9,6 +9,7 @@ import EditPost from './components/admin/post/EditPost.vue'
 //Start here frontend component 
 import PublicHome from './components/public/PublicHome.vue'
 import BlogPost from './components/public/blog/BlogPost.vue'
+import PostDetails from './components/public/blog/BlogDetails.vue'
 export const routes = [
   { 
   	path: '/home', 
@@ -47,5 +48,10 @@ export const routes = [
   {
         path:'/blog',
         component:BlogPost
+  },
+  ,
+  {
+        path:'/postdetails/:pid',
+        component:PostDetails
   },
 ];
