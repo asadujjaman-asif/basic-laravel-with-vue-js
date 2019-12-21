@@ -5439,35 +5439,17 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
+  computed: {
+    blogposts: function blogposts() {
+      return this.$store.getters.getBlogpost;
+    },
+    allcategories: function allcategories() {
+      return this.$store.getters.allCat;
+    }
+  },
   mounted: function mounted() {
-    console.log('Component mounted.');
+    this.$store.dispatch('getallblogpost'), this.$store.dispatch('allcategories');
   }
 });
 
@@ -86128,171 +86110,94 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
+  return _c("span", { attrs: { id: "blogsidebar" } }, [
+    _c("div", { staticClass: "span4" }, [
+      _c("aside", { staticClass: "right-sidebar" }, [
+        _vm._m(0),
+        _vm._v(" "),
+        _c("div", { staticClass: "widget" }, [
+          _c("h5", { staticClass: "widgetheading" }, [_vm._v("Categories")]),
+          _vm._v(" "),
+          _c(
+            "ul",
+            { staticClass: "cat" },
+            _vm._l(_vm.allcategories, function(category) {
+              return _c("li", [
+                _c("i", { staticClass: "icon-angle-right" }),
+                _c("a", { attrs: { href: "#" } }, [
+                  _vm._v(_vm._s(category.title))
+                ]),
+                _c("span", [_vm._v(" (20)")])
+              ])
+            }),
+            0
+          )
+        ]),
+        _vm._v(" "),
+        _c("div", { staticClass: "widget" }, [
+          _c("h5", { staticClass: "widgetheading" }, [_vm._v("Latest posts")]),
+          _vm._v(" "),
+          _c(
+            "ul",
+            { staticClass: "recent" },
+            _vm._l(_vm.blogposts, function(post, index) {
+              return index < 5
+                ? _c("li", [
+                    _c("img", {
+                      staticClass: "pull-left",
+                      staticStyle: { height: "60px", width: "80px" },
+                      attrs: { src: "assets/postiamges/" + post.photo, alt: "" }
+                    }),
+                    _vm._v(" "),
+                    _c("h6", [
+                      _c("a", { attrs: { href: "#" } }, [
+                        _vm._v(_vm._s(post.title))
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(
+                        "\n                      " +
+                          _vm._s(
+                            _vm._f("sortlenght")(
+                              post.short_description,
+                              80,
+                              "...."
+                            )
+                          ) +
+                          "\n                    "
+                      )
+                    ])
+                  ])
+                : _vm._e()
+            }),
+            0
+          )
+        ])
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("span", { attrs: { id: "blogsidebar" } }, [
-      _c("div", { staticClass: "span4" }, [
-        _c("aside", { staticClass: "right-sidebar" }, [
-          _c("div", { staticClass: "widget" }, [
-            _c("form", { staticClass: "form-search" }, [
-              _c("input", {
-                staticClass: "input-medium search-query",
-                attrs: { placeholder: "Type something", type: "text" }
-              }),
-              _vm._v(" "),
-              _c(
-                "button",
-                {
-                  staticClass: "btn btn-square btn-theme",
-                  attrs: { type: "submit" }
-                },
-                [_vm._v("Search")]
-              )
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "widget" }, [
-            _c("h5", { staticClass: "widgetheading" }, [_vm._v("Categories")]),
-            _vm._v(" "),
-            _c("ul", { staticClass: "cat" }, [
-              _c("li", [
-                _c("i", { staticClass: "icon-angle-right" }),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Web design")]),
-                _c("span", [_vm._v(" (20)")])
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("i", { staticClass: "icon-angle-right" }),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Online business")]),
-                _c("span", [_vm._v(" (11)")])
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("i", { staticClass: "icon-angle-right" }),
-                _c("a", { attrs: { href: "#" } }, [
-                  _vm._v("Marketing strategy")
-                ]),
-                _c("span", [_vm._v(" (9)")])
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("i", { staticClass: "icon-angle-right" }),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Technology")]),
-                _c("span", [_vm._v(" (12)")])
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("i", { staticClass: "icon-angle-right" }),
-                _c("a", { attrs: { href: "#" } }, [_vm._v("About finance")]),
-                _c("span", [_vm._v(" (18)")])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "widget" }, [
-            _c("h5", { staticClass: "widgetheading" }, [
-              _vm._v("Latest posts")
-            ]),
-            _vm._v(" "),
-            _c("ul", { staticClass: "recent" }, [
-              _c("li", [
-                _c("img", {
-                  staticClass: "pull-left",
-                  attrs: { src: "img/dummies/blog/65x65/thumb1.jpg", alt: "" }
-                }),
-                _vm._v(" "),
-                _c("h6", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Lorem ipsum dolor sit")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "\n                      Mazim alienum appellantur eu cu ullum officiis pro pri\n                    "
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _c("img", {
-                    staticClass: "pull-left",
-                    attrs: { src: "img/dummies/blog/65x65/thumb2.jpg", alt: "" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("h6", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Maiorum ponderum eum")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "\n                      Mazim alienum appellantur eu cu ullum officiis pro pri\n                    "
-                  )
-                ])
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [
-                  _c("img", {
-                    staticClass: "pull-left",
-                    attrs: { src: "img/dummies/blog/65x65/thumb3.jpg", alt: "" }
-                  })
-                ]),
-                _vm._v(" "),
-                _c("h6", [
-                  _c("a", { attrs: { href: "#" } }, [
-                    _vm._v("Et mei iusto dolorum")
-                  ])
-                ]),
-                _vm._v(" "),
-                _c("p", [
-                  _vm._v(
-                    "\n                      Mazim alienum appellantur eu cu ullum officiis pro pri\n                    "
-                  )
-                ])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "widget" }, [
-            _c("h5", { staticClass: "widgetheading" }, [
-              _vm._v("Popular tags")
-            ]),
-            _vm._v(" "),
-            _c("ul", { staticClass: "tags" }, [
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Web design")])
-              ]),
-              _vm._v(" "),
-              _c("li", [_c("a", { attrs: { href: "#" } }, [_vm._v("Trends")])]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Technology")])
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Internet")])
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Tutorial")])
-              ]),
-              _vm._v(" "),
-              _c("li", [
-                _c("a", { attrs: { href: "#" } }, [_vm._v("Development")])
-              ])
-            ])
-          ])
-        ])
+    return _c("div", { staticClass: "widget" }, [
+      _c("form", { staticClass: "form-search" }, [
+        _c("input", {
+          staticClass: "input-medium search-query",
+          attrs: { placeholder: "Type something", type: "text" }
+        }),
+        _vm._v(" "),
+        _c(
+          "button",
+          {
+            staticClass: "btn btn-square btn-theme",
+            attrs: { type: "submit" }
+          },
+          [_vm._v("Search")]
+        )
       ])
     ])
   }
@@ -103486,7 +103391,8 @@ __webpack_require__.r(__webpack_exports__);
     category: [],
     post: [],
     blogpost: [],
-    singlepost: []
+    singlepost: [],
+    allcat: []
   },
   getters: {
     getCategory: function getCategory(state) {
@@ -103500,6 +103406,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     singlePost: function singlePost(state) {
       return state.singlepost;
+    },
+    allCat: function allCat(state) {
+      return state.allcat;
     }
   },
   actions: {
@@ -103522,6 +103431,11 @@ __webpack_require__.r(__webpack_exports__);
       axios.get('/post-details/' + id).then(function (response) {
         context.commit('postdetails', response.data.post);
       });
+    },
+    allcategories: function allcategories(context) {
+      axios.get('/all-categories/').then(function (response) {
+        context.commit('allcategories', response.data.categories);
+      });
     }
   },
   mutations: {
@@ -103536,6 +103450,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     postdetails: function postdetails(state, data) {
       return state.singlepost = data;
+    },
+    allcategories: function allcategories(state, data) {
+      return state.allcat = data;
     }
   }
 });
