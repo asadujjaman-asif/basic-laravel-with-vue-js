@@ -5,7 +5,7 @@
         <div class="row">
           <div class="span4">
             <div class="inner-heading">
-              <h2>Post right sidebar</h2>
+              <h2>Post right sidebar </h2>
             </div>
           </div>
           <div class="span8">
@@ -63,11 +63,17 @@
     		}
     	},
     	methods:{
-
-    	},
-        mounted() {
-        		this.$store.dispatch('postdetails',this.$route.params.pid)
-            console.log('Component mounted.')
+        singlePost(){
+          this.$store.dispatch('postdetails',this.$route.params.pid)
         }
+    	},
+      mounted() {
+        this.singlePost();		
+      },
+      watch:{
+        $route(to,form){
+          this.singlePost();
+        }
+      }
     }
 </script>

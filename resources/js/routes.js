@@ -49,9 +49,12 @@ export const routes = [
         path:'/blog',
         component:BlogPost
   },
-  ,
   {
         path:'/postdetails/:pid',
         component:PostDetails
+  },
+  {
+        path:'/categories/:id',
+        component:BlogPost
   },
 ];

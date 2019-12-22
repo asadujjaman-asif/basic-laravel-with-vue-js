@@ -22,4 +22,9 @@ class BlogController extends Controller
        $categories= Category::all();
         return response()->json(['categories'=>$categories],200);
     }
+    public function getPostByCatId($id)
+    {
+        $postbycat= Post::with('user','category')->where("category_id",$id)->first();
+        return response()->json(['postbycat'=>$postbycat],200);
+    }
 }

@@ -56,6 +56,14 @@ export default {
 				
 				context.commit('allcategories',response.data.categories)
 			})
+		},
+		getPostByCatId(context,id){
+			axios.get("/get-post-by-cat-id/"+id)
+			.then((response)=>{
+				console.log(response.data.postbycat)
+				context.commit('getPostByCatId',response.data.postbycat)
+			})
+
 		}
 	},
 	mutations:{
@@ -73,6 +81,9 @@ export default {
 		},
 		allcategories(state,data){
 			return state.allcat=data
+		},
+		getPostByCatId(state,data){
+			return state.blogpost=data
 		}
 	}
 }
